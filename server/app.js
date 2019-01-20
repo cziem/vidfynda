@@ -1,9 +1,12 @@
+require('dotenv').config()
 const express = require('express')
 const bodyParser = require('body-parser')
 const request = require('request')
 const app = express()
+const movieRouter = require('../routes/movie')
 
 const port = process.env.PORT || 3000
+const apikey = process.env.API_KEY
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.static('public'))
@@ -38,13 +41,11 @@ app.get('/posts', (req, res) => {
 })
 
 // Movie API
-app.get('/movies', (req, res) => {
-  res.render('movies')
-})
+app.use('/movies', movieRouter)
 
 app.post('/movieResults', (req, res) => {
   let movieName = req.body.find_movie
-  const uri = `http://www.omdbapi.com/?apikey=7dbfc3b6&s=${movieName}`
+  const uri = `http://www.omdbapi.com/?apikey=${apikey}&s=${movieName}`
 
   request(uri, (error, response, body) => {
       if (!error && response.statusCode === 200) {
