@@ -1,12 +1,10 @@
 require('dotenv').config()
 const express = require('express')
 const bodyParser = require('body-parser')
-const request = require('request')
 const app = express()
 const movieRouter = require('../routes/movie')
 
 const port = process.env.PORT || 3000
-const apikey = process.env.API_KEY
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.static('public'))
@@ -42,21 +40,7 @@ app.get('/posts', (req, res) => {
 
 // Movie API
 app.use('/movies', movieRouter)
+app.use('/movieResults', movieRouter)
 
-app.post('/movieResults', (req, res) => {
-  let movieName = req.body.find_movie
-  const uri = `http://www.omdbapi.com/?apikey=${apikey}&s=${movieName}`
-
-  request(uri, (error, response, body) => {
-      if (!error && response.statusCode === 200) {
-        const data = JSON.parse(body)
-        if (data.Response.toLowerCase() === 'false') {
-          res.render('error', { data: data.Error })
-        } else {
-          res.render('results', { data })
-        }
-      }
-    })
-})
 
 app.listen(port, () => console.log(`app running on localhost://${port}`))
