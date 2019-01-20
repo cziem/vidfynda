@@ -1,0 +1,17 @@
+<!-- include partials -->
+<% include partials/header %>
+<link rel='stylesheet' href='/movie.css'>
+
+<div class="main-container">
+  <h2 class="title">Opppsss... <%= data %></h2>
+
+  <div class="error-msg">
+    <p>
+      We did not find the movie you are looking for...
+    </p>
+  </div>
+
+  <a id="search_again" href="/movies">Search Again</a>
+</div>
+
+<% include partials/footer %>

@@ -1,0 +1,16 @@
+<!-- include partials -->
+<% include partials/header %>
+<link rel='stylesheet' href='/movie.css'>
+
+<div class="main-container">
+  <h2>Search For a Movie</h2>
+
+  <form action="/movieResults" method="POST">
+    <input type="text" name="find_movie" placeholder="Salt" autofocus>
+    <div class="btn-block">
+      <button type="submit">Find Movie</button>
+    </div>
+  </form>
+</div>
+
+<% include partials/footer %>
