@@ -1,10 +1,10 @@
-require('dotenv').config()
+require('../config/config')
 const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
 const movieRouter = require('../routes/movie')
 
-const port = process.env.PORT || 3000
+const port = process.env.PORT
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.static('public'))
