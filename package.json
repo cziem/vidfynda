@@ -1,7 +1,7 @@
 {
-  "name": "Learn_node",
+  "name": "vidlify",
   "version": "1.0.0",
-  "description": "Learn how to use nodeJs",
+  "description": "A video finder application, hopefully will become something more",
   "main": "app.js",
   "author": "Fayvor George",
   "license": "MIT",
