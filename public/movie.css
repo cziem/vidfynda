@@ -3,6 +3,14 @@ body {
   background: #ebebeb;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
+  height: 100vh;
+  background: url('/images/bng-1.jpg') no-repeat;
+  background-position: center center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .movieList {
@@ -41,11 +49,12 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 80vh;
+  width: 80%;
+  height: 90%;
 }
 
 .main-container h2 {
-  color: #0b5f74;
+  color: #ebebeb;
   text-transform: capitalize;
 }
 
@@ -94,4 +103,10 @@ form button {
 .error-msg {
   padding: 2.5rem 0 1rem;
   color: #3d3d3d;
+}
+
+footer {
+  display: flex;
+  color: #cacaca;
+  padding-bottom: .6em;
 }
