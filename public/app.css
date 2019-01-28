@@ -14,9 +14,6 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: url('/images/bng-1.jpg') no-repeat;
-  background-position: center center;
-  background-size: cover;
   color: #ebebeb;
 }
 
